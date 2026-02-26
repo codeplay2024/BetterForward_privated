@@ -1,12 +1,19 @@
 version: '3.8'
 
 services:
-  betterforward_privated:
-    container_name: betterforward_privated
+  betterforward_service:
+
+    # ✅ 镜像名称
+    image: betterforward_privated
+
+    # ✅ 容器名称
+    container_name: betterforward_docker
 
     build:
       context: .
       dockerfile: Dockerfile
+      # ✅ 强制每次构建拉取基础镜像
+      pull: true
 
     restart: unless-stopped
 
@@ -16,8 +23,6 @@ services:
     volumes:
       - ./data:/app/data
 
-    # 如果以后你要加 redis / postgres
-    # 可以在这里扩展
-
-    # 自动重新构建提示：
-    # docker compose up -d --build
+    # 强制重新创建容器
+    deploy:
+      replicas: 1
