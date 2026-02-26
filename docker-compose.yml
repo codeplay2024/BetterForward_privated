@@ -1,14 +1,23 @@
 version: '3.8'
 
 services:
-  betterforward:
-    image: ghcr.io/sidecloudgroup/betterforward:latest
+  betterforward_privated:
+    container_name: betterforward_privated
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     restart: unless-stopped
-    environment:
-      - TOKEN=your_bot_token_here
-      - GROUP_ID=your_group_id_here
-      - LANGUAGE=zh_CN
-      - TG_API=
-      - WORKER=2
+
+    env_file:
+      - .env
+
     volumes:
       - ./data:/app/data
+
+    # 如果以后你要加 redis / postgres
+    # 可以在这里扩展
+
+    # 自动重新构建提示：
+    # docker compose up -d --build
