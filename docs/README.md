@@ -1,7 +1,8 @@
 # BetterForward
 
----------------
+
 ## 新增构建流程
+
 1，终端，CD到目录
 
 2，给与权限： `chmod +x rebuild.sh` 
@@ -9,7 +10,6 @@
 3，执行脚本： `./rebuild.sh` 
 
 
-  
 
 [English README](README_en.md)
 
