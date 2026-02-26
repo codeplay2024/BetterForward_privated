@@ -170,3 +170,10 @@ BetterForward 内置了智能垃圾消息过滤系统，帮助你有效管理和
 - Telegram频道 [@betterforward](https://t.me/betterforward)
 
 请使用 `issues` 报告错误和提出功能请求。
+
+
+---------------
+## 新增构建流程
+1，终端，CD到目录
+2，给与权限： `chmod +x rebuild.sh` 
+3，执行脚本： `./rebuild.sh` 
